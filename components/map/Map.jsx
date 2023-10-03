@@ -8,12 +8,7 @@ const center = {
   lng: -65.3999464272355
 }
 
-const newPos = {
-  lat: -3.755,
-  lng: -38.524
-}
-
-const Map = () => {
+const Map = ({ plantsLocations }) => {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -29,15 +24,8 @@ const Map = () => {
             options={mapOptions}
             center={center}
             zoom={3.5}
-          // onLoad={onLoad}
-          // onUnmount={onUnmount}
           >
-            <MarkerF
-              position={center}
-            // onLoad={() => console.log('Marker Loaded')}
-            // icon="https://picsum.photos/64"
-            />
-            <MarkerF position={newPos} />
+            { plantsLocations.map(location => <MarkerF position={location} />) }
           </GoogleMap> : null
       }
     </>

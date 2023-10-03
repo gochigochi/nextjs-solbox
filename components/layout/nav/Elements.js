@@ -7,7 +7,7 @@ export const Container = styled.div`
     height: 100vh;
     width: 12rem;
     display: grid;
-    grid-template-rows: 8rem 1fr 4rem;
+    grid-template-rows: 8.5rem 1fr 4rem;
     background-color: #fff;
     box-shadow: 0px 0 5px 2px rgba(0, 0, 0, 0.1);
 `
