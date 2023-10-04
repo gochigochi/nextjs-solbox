@@ -1,6 +1,9 @@
 "use client"
 
-import Map from '../map/Map'
+import { lazy, Suspense } from "react"
+// import Map from '../map/Map'
+const Map = lazy(() => import("../map/Map"))
+import CommunityCharts from './communityCharts/CommunityCharts'
 import {
   Container,
   Header,
@@ -16,6 +19,10 @@ import {
   MapContainer,
 } from './Elements'
 
+
+const MapLoader = () => {
+  return(<div>hola</div>)
+}
 
 const Dashboard = ({ communityData }) => {
 
@@ -58,7 +65,9 @@ const Dashboard = ({ communityData }) => {
           </ProductionBox>
           <ColumnTitle>Nuestros paneles</ColumnTitle>
           <MapContainer>
-            <Map plantsLocations={communityData.plantsLocations} />
+            <Suspense fallback={<MapLoader />}>
+              <Map plantsLocations={communityData.plantsLocations} />
+            </Suspense>
           </MapContainer>
           {/* <div id="desktop-dashboard-sidebar">
             <DashboardSidebar />
@@ -66,7 +75,7 @@ const Dashboard = ({ communityData }) => {
         </Column>
         <Column>
           <ColumnTitle>Ahorros equivalentes a:</ColumnTitle>
-          {/* <Graphics totalCommunityProduction={data.solboxData.communityPlantsTotalEnergy} /> */}
+          <CommunityCharts plantsTotalEnergy={communityData.plantsTotalEnergy} />
         </Column>
       </Section>
       <Section id="mobile-dashboard-sidebar">
