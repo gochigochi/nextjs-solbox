@@ -7,7 +7,7 @@ const TreeChart = ({ total }) => {
 
     const data = [
         {
-            name: "Árboles plantados",
+            name: "Árboles",
             amount: (total * .01169).toFixed(2),
         },
     ]

@@ -7,7 +7,7 @@ const OilChart = ({ total }) => {
 
     const data = [
         {
-            name: "Distancia en Kms.",
+            name: "Kms.",
             amount: (total * 10).toFixed(2),
         },
     ]

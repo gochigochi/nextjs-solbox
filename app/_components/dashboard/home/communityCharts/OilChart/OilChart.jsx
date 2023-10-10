@@ -7,7 +7,7 @@ const OilChart = ({ total }) => {
 
     const data = [
         {
-            name: "Litros de nafta",
+            name: "Litros",
             amount: (total * .30062630480167).toFixed(2),
         },
     ]

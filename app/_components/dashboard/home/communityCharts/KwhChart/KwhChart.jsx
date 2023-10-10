@@ -30,7 +30,7 @@ const KwhChart = ({ total }) => {
             >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
-                <YAxis unit=" Producción"/>
+                <YAxis />
                 <Tooltip />
                 <Bar dataKey="amount" fill="var(--strong-green)" />
             </BarChart>
