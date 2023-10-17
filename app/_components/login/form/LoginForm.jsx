@@ -2,7 +2,7 @@ import PrimaryButton from "../../buttons/PrimaryButton"
 import SecondaryButton from "../../buttons/SecondaryButtons"
 import { InputContainer, Input, Button, SelectButton, ButtonsContainer } from "./Elements"
 
-const Register = ({ setSelectedForm }) => {
+const LoginForm = ({ setSelectedForm }) => {
   return (
     <>
         <InputContainer>
@@ -20,15 +20,15 @@ const Register = ({ setSelectedForm }) => {
             />
         </InputContainer>
         <ButtonsContainer>
-            <SelectButton onClick={() => setSelectedForm("login")}>
-                <SecondaryButton>Tengo una cuenta</SecondaryButton>
+            <SelectButton onClick={() => setSelectedForm("register")}>
+                <SecondaryButton>Registrarse</SecondaryButton>
             </SelectButton>
             <Button>
-                <PrimaryButton>Registrarse</PrimaryButton>
+                <PrimaryButton>Ingresar</PrimaryButton>
             </Button>
         </ButtonsContainer>
     </>
   )
 }
 
-export default Register
+export default LoginForm

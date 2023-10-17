@@ -41,6 +41,19 @@ export const NavLink = styled(Link)`
     }
 `
 
+export const FakeNavLink = styled.button`
+    margin-bottom: 1.3rem;
+    font-size: 1rem;
+    text-align: left;
+
+    span {
+        margin-right: .7rem;
+        font-size: 1rem;
+        position: relative;
+        top: 2px;
+    }
+`
+
 export const NavFooter = styled.div``
 
 export const FooterLink = styled(Link)`

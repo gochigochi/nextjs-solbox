@@ -1,10 +1,3 @@
+// MIDDLEWARE WILL REDIRECT TO /HOME OR /LOGIN
 
-export default function Home() {
-
-  console.log("this is home")
-
-  return (
-    <main>
-    </main>
-  )
-}
+export default function Home() { <></> }

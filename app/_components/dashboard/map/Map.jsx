@@ -2,7 +2,7 @@ import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api'
 import { mapOptions } from './config'
 
 const center = {
-  lat: -36.12674288952328,
+  lat: -39.08138204478938,
   lng: -65.3999464272355
 }
 
@@ -23,7 +23,7 @@ const Map = ({ plantsLocations }) => {
             center={center}
             zoom={3.5}
           >
-            {plantsLocations.map(location => <MarkerF key={crypto.randomUUID()} position={location} />)}
+            {plantsLocations.map(location => location.lat !== center.lat ? <MarkerF key={crypto.randomUUID()} position={location} /> : null)}
           </GoogleMap> : null
       }
     </>

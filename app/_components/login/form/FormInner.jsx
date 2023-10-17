@@ -1,13 +1,12 @@
 "use client"
 
+import dynamic from "next/dynamic"
 import Link from "next/link"
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { LoginSchema } from "@/app/_lib/schemas"
-// import Loader from '../loader/Loader'
-// import LoadingScene from '../loader/LoadingScene'
+const DynLoginForm = dynamic(() => import("./LoginForm"), { ssr: false })
+const DynRegisterForm = dynamic(() => import("./RegisterForm"), { ssr: false })
 import { softFadeIn } from "@/app/_lib/motions"
-import Login from "./Login"
-import Register from "./Register"
 import {
   Dialogue,
   LogoContainer,
@@ -16,7 +15,7 @@ import {
   FormEl,
 } from './Elements'
 
-const Form = ({ login, register, forgotPsw }) => {
+const FormInner = ({ login, register, forgotPsw }) => {
 
   const [selectedForm, setSelectedForm] = useState("login")
   const [error, setError] = useState("")
@@ -36,16 +35,18 @@ const Form = ({ login, register, forgotPsw }) => {
       if (!result.success) {
 
         setError(result.error.issues[0].message)
+        return
+        
+      }
+      
+      const response = await login(result.data)
 
-      } else {
+      if (response?.error) {
 
-        const response = await login(result.data)
-
-        if (response.error) {
-          setError(response.error)
-        }
+        setError(response.error)
 
       }
+
     }
 
     if (selectedForm === "register") {
@@ -61,7 +62,7 @@ const Form = ({ login, register, forgotPsw }) => {
 
       } else {
 
-        const response = await login(result.data)
+        const response = await register(result.data)
 
         if (response?.error) {
           setError(response.error)
@@ -73,8 +74,8 @@ const Form = ({ login, register, forgotPsw }) => {
   }
 
   const SelectedForm = () => {
-    if (selectedForm === "login") return <Login setSelectedForm={setSelectedForm} />
-    if (selectedForm === "register") return <Register setSelectedForm={setSelectedForm} />
+    if (selectedForm === "login") return <DynLoginForm setSelectedForm={setSelectedForm} />
+    if (selectedForm === "register") return <DynRegisterForm setSelectedForm={setSelectedForm} />
   }
 
   return (
@@ -86,7 +87,7 @@ const Form = ({ login, register, forgotPsw }) => {
     >
       <Link href="/">
         <LogoContainer>
-          <Logo src="/logos/solbox-logo.png" alt="" fill sizes='20vw' priority />
+          <Logo src="https://firebasestorage.googleapis.com/v0/b/solbox-app.appspot.com/o/solbox-logo.png?alt=media&token=7f8dbf38-1da3-443d-bd53-ff6eccff66ff&_gl=1*hux6co*_ga*MjA5NzcwMTI5NS4xNjk1NzM4Mzcw*_ga_CW55HF8NVT*MTY5Njk1Mjc1OS4yLjEuMTY5Njk1MzcxMi41MC4wLjA." alt="" fill sizes='20vw' priority />
         </LogoContainer>
       </Link>
       <FormEl action={handleSubmit} noValidate>
@@ -99,4 +100,4 @@ const Form = ({ login, register, forgotPsw }) => {
   )
 }
 
-export default Form
+export default FormInner

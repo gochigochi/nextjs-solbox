@@ -1,3 +1,4 @@
+import { logout } from "@/app/_lib/logout"
 import { MdOutlineDashboardCustomize } from "react-icons/md"
 import { GrArticle, GrSend } from 'react-icons/gr'
 import { RiSettingsLine } from 'react-icons/ri'
@@ -9,10 +10,12 @@ import {
     Logo,
     Navigation,
     NavLink,
+    FakeNavLink,
     NavFooter,
 } from "./Elements"
 
 const Nav = () => {
+
     return (
         <Container>
             <LogoContainer>
@@ -31,25 +34,39 @@ const Nav = () => {
                     <span><AiFillQuestionCircle /></span>
                     Dudas frecuentes
                 </NavLink>
-                <NavLink href="/settings" >
-                    <span><RiSettingsLine /></span>
-                    Configuración
-                </NavLink>
-                <NavLink href="/login" >
-                    <span><BiLogInCircle /></span>
-                    Ingresar
-                </NavLink>
-                {/* <NavLink href="" >
-                    <span><BiLogOutCircle /></span>
-                    Salir
-                </NavLink> */}
+                {
+                    // !logged ?
+                    true ?
+                        <NavLink href="/login" >
+                            <span><BiLogInCircle /></span>
+                            Ingresar
+                        </NavLink> :
+                        <>
+                            <NavLink href="/settings" >
+                                <span><RiSettingsLine /></span>
+                                Configuración
+                            </NavLink>
+                            {/* <form>
+                                <FakeNavLink formAction={() => logout()}>
+                                    <span><BiLogOutCircle /></span>
+                                    Salir
+                                </FakeNavLink>
+                            </form> */}
+                            {/* <form action={handleLogout}>
+                                <FakeNavLink type="submit">
+                                    <span><BiLogOutCircle /></span>
+                                    Salir
+                                </FakeNavLink>
+                            </form> */}
+                        </>
+                }
                 <NavLink href="/contact" >
                     <span><GrSend /></span>
                     Contacto
                 </NavLink>
             </Navigation>
             <NavFooter>
-                
+
             </NavFooter>
         </Container>
     )

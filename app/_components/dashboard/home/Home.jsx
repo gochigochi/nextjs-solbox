@@ -1,9 +1,9 @@
 "use client"
 
 import { lazy, Suspense } from "react"
-// import Map from '../map/Map'
-const Map = lazy(() => import("../map/Map"))
 import CommunityCharts from './communityCharts/CommunityCharts'
+import UserPlants from "./userPlants/UserPlants"
+import UserCharts from "./userCharts/UserCharts"
 import {
   Container,
   Header,
@@ -19,37 +19,39 @@ import {
   MapContainer,
 } from './Elements'
 
-const Home = ({ communityData }) => {
+const Map = lazy(() => import("../map/Map"))
 
-  console.log(communityData)
+const Home = ({ communityData, userData }) => {
+
+  console.log(userData)
 
   return (
     <Container>
       <Header>
         <WelcomeText>Bienvenido a la comunidad Solbox</WelcomeText>
       </Header>
-      {/* {
-        user.isAuth ?
+      {
+        userData ?
         <>
           <Section>
             <Column>
               <ColumnTitle>Mis plantas de producción</ColumnTitle>
               <ProductionBox>
-                <ProductionNumber>{user.userTotalPower}<span>kWh</span></ProductionNumber>
+                <ProductionNumber>{userData.userTotalPower}<span>kWh</span></ProductionNumber>
                 <ProductionText>Total energía producida</ProductionText>
                 <ProductionDetail>Desde el 17-08-23</ProductionDetail>
               </ProductionBox>
-              <Plants data={user.userPlants} />
+              <UserPlants data={userData.userPlants} />
             </Column>
             <Column>
               <ColumnTitle>Ahorros equivalentes a:</ColumnTitle>
-              <Results totalIndividualProduction={user.userTotalPower} />
+              <UserCharts totalIndividualProduction={userData.userTotalPower} />
             </Column>
             <Column></Column>
           </Section>
           <Hr />
         </> : null
-      } */}
+      }
       <Section>
         <Column>
           <ColumnTitle>Comunidad Solbox</ColumnTitle>
@@ -62,9 +64,6 @@ const Home = ({ communityData }) => {
           <MapContainer>
               <Map plantsLocations={communityData.plantsLocations} />
           </MapContainer>
-          {/* <div id="desktop-dashboard-sidebar">
-            <DashboardSidebar />
-          </div> */}
         </Column>
         <Column>
           <ColumnTitle>Ahorros equivalentes a:</ColumnTitle>

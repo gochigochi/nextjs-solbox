@@ -1,6 +1,7 @@
 import '../globals.css'
 import { Montserrat } from 'next/font/google'
 import Layout from '../_components/dashboard/layout/Layout'
+import { isLogged } from '../_lib/isLogged'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -10,6 +11,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       <Layout font={montserrat}>
