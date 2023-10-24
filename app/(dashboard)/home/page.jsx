@@ -17,7 +17,7 @@ const HomePage = async () => {
 
   return (
     // <Home communityData={communityData} userData={userData} />
-    <Home data={response} />
+    <Home data={response.error} />
   )
 }
 
