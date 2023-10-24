@@ -67,12 +67,12 @@ export const getSolarmanStationsData = async () => {
       )
   
       solarmanStationsData = await stationsResponse.json()
+
+      return solarmanStationsData
   
     } catch (err) {
   
       console.log("ERROR....", err)
+      return { error: err }
     }
-
-    return solarmanStationsData
-
 }

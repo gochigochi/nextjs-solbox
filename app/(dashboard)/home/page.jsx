@@ -7,15 +7,17 @@ import { getSolarmanStationsData } from "@/app/_lib/getSolarmanStationsData"
 const HomePage = async () => {
 
   // const token = cookies().get("token")
-  const solarmanStationsData =  await getSolarmanStationsData()
+  // const solarmanStationsData =  await getSolarmanStationsData()
   // const communityData = getSolarmanCommunityData(solarmanStationsData)
   // const userData = token ? await getSolarmanUserData(token, solarmanStationsData) : null
 
   // console.log("User Data.,......", userData)
 
+  const response =  await getSolarmanStationsData()
+
   return (
     // <Home communityData={communityData} userData={userData} />
-    <Home data={solarmanStationsData} />
+    <Home data={response} />
   )
 }
 
