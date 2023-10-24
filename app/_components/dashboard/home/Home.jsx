@@ -21,7 +21,10 @@ import {
 
 // const Map = lazy(() => import("../map/Map"))
 
-const Home = ({ communityData, userData }) => {
+const Home = ({ data }) => {
+// const Home = ({ communityData, userData }) => {
+
+console.log(data)
 
   // console.log(userData.userTotalPower)
 
