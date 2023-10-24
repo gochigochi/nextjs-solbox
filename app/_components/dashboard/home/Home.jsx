@@ -21,10 +21,13 @@ import {
 
 // const Map = lazy(() => import("../map/Map"))
 
-const Home = ({ data }) => {
-// const Home = ({ communityData, userData }) => {
+const Home = ({ data, one, two, three }) => {
+  // const Home = ({ communityData, userData }) => {
 
-console.log(data)
+  console.log(data)
+  Object.keys(data).map(el => console.log("item....", el))
+
+  console.log("HERE........", one, two, three)
 
   // console.log(userData.userTotalPower)
 

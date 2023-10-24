@@ -6,7 +6,10 @@ import { getSolarmanStationsData } from "@/app/_lib/getSolarmanStationsData"
 
 const HomePage = async () => {
 
-  let response 
+  let response
+  let one
+  let two
+  let three
 
   let solarmanStationsData
 
@@ -31,6 +34,8 @@ const HomePage = async () => {
 
     const { access_token } = await accessTokenResponse.json()
 
+    one = access_token
+
     // GET THE ORGANIZATION ID - ORG IS SOLBOX
     const companyIdResponse = await fetch(`https://globalapi.solarmanpv.com/account/v1.0/info?language=en`, {
       method: "POST",
@@ -41,6 +46,8 @@ const HomePage = async () => {
     })
 
     const companyData = await companyIdResponse.json()
+
+    two = companyData
 
     // API REQUIRES TO GET A SECOND TOKEN RELATED TO THE ORGANIZATION ID - IN THIS CASE ONLY FOR SOLBOX BUSINESS
     const orgAccessTokenResponse = await fetch(`https://globalapi.solarmanpv.com/account/v1.0/token?appId=${appId}&language=en`, {
@@ -57,6 +64,8 @@ const HomePage = async () => {
     })
 
     const orgAccessData = await orgAccessTokenResponse.json()
+
+    three = orgAccessData
 
     // GET STATIONS/PLANTS FOR THIS ORGANIZATION (SOLBOX - BUSINESS)
     const stationsResponse = await fetch(
@@ -93,7 +102,7 @@ const HomePage = async () => {
 
   return (
     // <Home communityData={communityData} userData={userData} />
-    <Home data={response} />
+    <Home data={response} one={one} two={two} three={three} />
   )
 }
 
