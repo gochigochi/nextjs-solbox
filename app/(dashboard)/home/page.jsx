@@ -13,8 +13,10 @@ const HomePage = async () => {
 
   let solarmanStationsData
 
-  const appId = process.env.SOLARMAN_APP_ID
-  const userPassword = process.env.SOLARMAN_PASSWORD
+  // const appId = process.env.SOLARMAN_APP_ID
+  const appId = "2023050973701156"
+  // const userPassword = process.env.SOLARMAN_PASSWORD
+  const userPassword = "Soleventus01*"
   const SHA256 = require("crypto-js/sha256")
   const hashedPassword = SHA256(userPassword).toString()
 
@@ -27,14 +29,20 @@ const HomePage = async () => {
       },
       body: JSON.stringify({
         password: hashedPassword,
-        email: process.env.SOLARMAN_USER, // SOLARMAN BUSINESS USER
-        appSecret: process.env.SOLARMAN_APP_SECRET, // SOLARMAN BUSINESS APP SECRET 
+        // email: process.env.SOLARMAN_USER, // SOLARMAN BUSINESS USER
+        email: "transformandolafuente@gmail.com",
+        // appSecret: process.env.SOLARMAN_APP_SECRET, // SOLARMAN BUSINESS APP SECRET 
+        appSecret: "28e2c5dab504c93fb6e370e4cc70484a"
       }),
     })
 
-    const { access_token } = await accessTokenResponse.json()
+    // const { access_token } = await accessTokenResponse.json()
 
-    one = access_token
+    // one = access_token
+
+    const z = await accessTokenResponse.json()
+
+    one = z
 
   } catch (err) {
 
