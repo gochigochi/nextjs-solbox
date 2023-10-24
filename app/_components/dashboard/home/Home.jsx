@@ -30,7 +30,7 @@ const Home = ({ communityData, userData }) => {
       <Header>
         <WelcomeText>Bienvenido a la comunidad Solbox</WelcomeText>
       </Header>
-      {
+      {/* {
         userData ?
         <>
           <Section>
@@ -51,7 +51,7 @@ const Home = ({ communityData, userData }) => {
           </Section>
           <Hr />
         </> : null
-      }
+      } */}
       <Section>
         <Column>
           <ColumnTitle>Comunidad Solbox</ColumnTitle>
@@ -61,9 +61,9 @@ const Home = ({ communityData, userData }) => {
             <ProductionDetail>Desde el 17-08-23</ProductionDetail>
           </ProductionBox>
           <ColumnTitle>Nuestros paneles</ColumnTitle>
-          <MapContainer>
+          {/* <MapContainer>
               <Map plantsLocations={communityData.plantsLocations} />
-          </MapContainer>
+          </MapContainer> */}
         </Column>
         <Column>
           <ColumnTitle>Ahorros equivalentes a:</ColumnTitle>
