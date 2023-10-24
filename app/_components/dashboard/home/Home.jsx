@@ -24,9 +24,9 @@ import {
 const Home = ({ data, one }) => {
   // const Home = ({ communityData, userData }) => {
 
-  console.log("Data", data)
-  const x = Object.values(data)
-  console.log("Values...", x)
+  // console.log("Data", data)
+  // const x = Object.values(data)
+  // console.log("Values...", x)
 
   console.log("HERE........", one)
 
