@@ -10,6 +10,16 @@ export const Container = styled.div`
     grid-template-rows: 8.5rem 1fr 4rem;
     background-color: #fff;
     box-shadow: 0px 0 5px 2px rgba(0, 0, 0, 0.1);
+
+    @media all and (max-width: 860px) {
+        width: 100%;
+        padding: 0 1.5rem;
+        height: 3.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 999;
+    }
 `
 
 export const LogoContainer = styled.div`
@@ -17,6 +27,11 @@ export const LogoContainer = styled.div`
     width: 100%;
     height: 4rem;
     place-self: center;
+
+    @media all and (max-width: 860px) {
+        height: 3rem;
+        width: 3rem;
+    }
 `
 
 export const Logo = styled(Image)`
@@ -27,6 +42,10 @@ export const Navigation = styled.nav`
     display: flex;
     flex-direction: column;
     padding-left: .6rem;
+
+    @media all and (max-width: 860px) {
+        display: none;
+    }
 `
 
 export const NavLink = styled(Link)`
@@ -54,7 +73,11 @@ export const FakeNavLink = styled.button`
     }
 `
 
-export const NavFooter = styled.div``
+export const NavFooter = styled.div`
+    @media all and (max-width: 860px) {
+        display: none;
+    }
+`
 
 export const FooterLink = styled(Link)`
     font-size: .8rem;

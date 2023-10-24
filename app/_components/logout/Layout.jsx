@@ -2,20 +2,25 @@
 
 import StyledComponentsRegistry from "@/app/_lib/registry"
 import { Montserrat } from 'next/font/google'
-import Nav from "./nav/Nav"
-import { LayoutContainer } from "./Elements"
+import styled from "styled-components"
 
 const montserrat = Montserrat({ subsets: ['latin'] })
+
+const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+`
 
 const Layout = (props) => {
 
   return (
     <StyledComponentsRegistry>
         <body className={montserrat.className}>
-          <Nav logged={props.logged}/>
-          <LayoutContainer>
+          <Container>
             {props.children}
-          </LayoutContainer>
+          </Container>
         </body>
     </StyledComponentsRegistry>
   )

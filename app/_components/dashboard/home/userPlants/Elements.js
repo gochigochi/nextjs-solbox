@@ -20,6 +20,10 @@ export const PlantDetails = styled.div``
 
 export const PlantName = styled.h3`
     font-size: 1.3rem;
+
+    @media all and (max-width: 450px) {
+        font-size: 1rem;
+    }
 `
 
 export const PlantId = styled.p`
@@ -59,6 +63,10 @@ export const DeletePlantButton = styled.button`
 
 export const ExpandButton = styled.button`
     margin: 1rem 0%;
+
+    @media all and (max-width: 450px) {
+        font-size: .9rem;
+    }
 `
 
 export const AddPlantButton = styled.button`
@@ -82,5 +90,7 @@ export const PlusIcon = styled.i`
 `
 
 export const AddText = styled.p`
-
+    @media all and (max-width: 450px) {
+        font-size: .9rem;
+    }
 `

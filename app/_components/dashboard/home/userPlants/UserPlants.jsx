@@ -62,7 +62,11 @@ const UserPlants = ({ data }) => {
                     )
                 })
             }
-            <ExpandButton onClick={() => setShowAll(!showAll)}>{showAll ? "Plegar" : "Ver todas las plantas"}</ExpandButton>
+            {
+                plantsToShow.length !== 0 ?
+                <ExpandButton onClick={() => setShowAll(!showAll)}>{showAll ? "Plegar" : "Ver todas las plantas"}</ExpandButton> :
+                null
+            }
             <AddPlantButton onClick={() => setOpenModal(true)}>
                 <PlusIcon><AiOutlinePlusCircle /></PlusIcon>
                 <AddText>Agregar nueva planta</AddText>

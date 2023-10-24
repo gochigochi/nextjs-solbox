@@ -15,6 +15,7 @@ import {
     GeneralError,
 } from "./Elements"
 import { revalidatePath } from "next/cache"
+import SecondaryButton from "@/app/_components/buttons/SecondaryButtons"
 
 const CreatePlantForm = ({ setOpenModal }) => {
 
@@ -68,8 +69,7 @@ const CreatePlantForm = ({ setOpenModal }) => {
             <input type="hidden" name="plant_lng" value={lng} />
             {
                 error.length > 0 ?
-                <GeneralError>{error}</GeneralError> :
-                null
+                <GeneralError>{error}</GeneralError> : null
             }
             <ButtonsContainer>
                 <Button type="submit" aria-disabled={pending}>
@@ -78,6 +78,9 @@ const CreatePlantForm = ({ setOpenModal }) => {
                             pending ? "Loading..." : "Crear"
                         }
                     </PrimaryButton>
+                </Button>
+                <Button type="button" onClick={() => setOpenModal(false)}>
+                    <SecondaryButton>Cancelar</SecondaryButton>
                 </Button>
             </ButtonsContainer>
         </Form>

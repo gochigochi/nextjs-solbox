@@ -15,9 +15,10 @@ export const InputContainer = styled.div`
 
 export const Input = styled.input`
     width: 100%;
-    padding: 0 1rem;
+    padding: .8rem 1rem;
     font-size: 1rem;
     border: 1px solid var(--soft-gray);
+    border-radius: 4px;
 
     &::placeholder {
         font-size: 1.2rem;
@@ -29,7 +30,7 @@ export const ButtonsContainer = styled.div`
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
 `
 
 export const Button = styled.button``
@@ -49,6 +50,17 @@ export const GeneralError = styled.p`
 
 export const MapContainer = styled.div`
     width: 100%;
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: .05rem;
+        bottom: -1.2rem;
+        left: 0;
+        background-color: var(--soft-gray);
+    }
 `
 
 export const Label = styled.p`

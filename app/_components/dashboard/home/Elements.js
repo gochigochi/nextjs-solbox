@@ -12,6 +12,10 @@ export const Container = styled.section`
         margin: 0 auto;
         padding: 5.5rem 0 3rem 0;
     }
+
+    @media all and (max-width: 860px) {
+        padding: 4rem 0 3rem 0; 
+    }
 `
 
 export const Header = styled.div``
@@ -23,11 +27,14 @@ export const WelcomeText = styled.p`
     border-bottom: 1px solid var(--soft-gray);
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
+
+    @media all and (max-width: 450px) {
+        font-size: .9rem;
+    }
 `
 
 export const Section = styled.section`
     display: grid;
-    /* grid-template-columns: minmax(25rem, 1.3fr) minmax(25rem, 1.1fr) minmax(18rem, 1fr); */
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
 
@@ -49,6 +56,10 @@ export const Column = styled.div``
 
 export const ColumnTitle = styled.h2`
     margin-bottom: 1.5rem;
+
+    @media all and (max-width: 450px) {
+        font-size: 1.1rem;
+    }
 `
 
 export const ProductionBox = styled.div`

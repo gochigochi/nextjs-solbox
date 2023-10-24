@@ -1,9 +1,5 @@
 import '../globals.css'
-import { Montserrat } from 'next/font/google'
-import Layout from '../_components/dashboard/layout/Layout'
-import { isLogged } from '../_lib/isLogged'
-
-const montserrat = Montserrat({ subsets: ['latin'] })
+import Layout from '../_components/logout/Layout'
 
 export const metadata = {
   title: "Solbox App",
@@ -11,10 +7,9 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-
   return (
     <html lang="en">
-      <Layout font={montserrat} logged={isLogged()}>
+      <Layout>
         {children}
       </Layout>
     </html>

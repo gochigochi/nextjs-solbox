@@ -130,4 +130,12 @@ export const Content = styled.div`
         object-fit: cover;
         margin: 5rem 0;
     }
+
+    @media all and (max-width: 450px) {
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+    }
 `

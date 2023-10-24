@@ -23,7 +23,7 @@ const Map = lazy(() => import("../map/Map"))
 
 const Home = ({ communityData, userData }) => {
 
-  console.log(userData)
+  console.log(userData.userTotalPower)
 
   return (
     <Container>

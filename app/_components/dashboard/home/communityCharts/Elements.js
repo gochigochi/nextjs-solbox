@@ -34,4 +34,10 @@ export const GraphTitle = styled.h3`
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
     font-weight: 700;
+
+    @media all and (max-width: 450px) {
+        margin-left: 1rem;
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
 `

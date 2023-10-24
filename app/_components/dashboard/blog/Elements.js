@@ -11,6 +11,10 @@ export const Container = styled.div`
         margin: 0 auto;
         padding: 5.5rem 0 3rem 0;
     }
+
+    @media all and (max-width: 450px) {
+        padding: 3.5rem 0 3rem 0;
+    }
 `
 
 export const SectionTitle = styled.h2`

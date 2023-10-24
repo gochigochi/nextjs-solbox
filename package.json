@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^2.19.2",
+    "@uiball/loaders": "^1.3.0",
     "crypto-js": "^4.1.1",
     "firebase": "^10.4.0",
     "formik": "^2.4.5",
