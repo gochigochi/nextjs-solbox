@@ -33,7 +33,12 @@ const Home = ({ data, one }) => {
   // console.log(userData.userTotalPower)
 
   return (
-    <Container>Pruebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</Container>
+    <Container>
+      Pruebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      <MapContainer>
+        <Map plantsLocations={communityData.plantsLocations} />
+      </MapContainer>
+    </Container>
     // <Container>
     //   <Header>
     //     <WelcomeText>Bienvenido a la comunidad Solbox</WelcomeText>
