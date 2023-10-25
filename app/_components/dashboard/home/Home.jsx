@@ -35,9 +35,6 @@ const Home = ({ data, one }) => {
   return (
     <Container>
       Pruebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      <MapContainer>
-        <Map plantsLocations={communityData.plantsLocations} />
-      </MapContainer>
     </Container>
     // <Container>
     //   <Header>
