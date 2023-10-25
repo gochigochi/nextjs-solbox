@@ -99,6 +99,7 @@ const HomePage = async () => {
   // const userData = token ? await getSolarmanUserData(token, solarmanStationsData) : null
 
   // console.log("User Data.,......", userData)
+  console.log("hola")
 
   return (
     // <Home communityData={communityData} userData={userData} />
