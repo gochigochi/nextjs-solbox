@@ -11,8 +11,6 @@ const HomePage = async () => {
   const communityData = getSolarmanCommunityData(solarmanStationsData)
   const userData = token ? await getSolarmanUserData(token, solarmanStationsData) : null
 
-  console.log(solarmanStationsData)
-
   return (
     <Home communityData={communityData} userData={userData} />
   )

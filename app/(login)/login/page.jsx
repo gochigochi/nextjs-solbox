@@ -1,9 +1,5 @@
-import FormContainer from "@/app/_components/login/form/FormContainer"
+import Form from "@/app/_components/login/form/Form"
 
-const LoginPage = () => {
-  return (
-    <FormContainer />
-  )
-}
+const LoginPage = () => <Form />
 
 export default LoginPage

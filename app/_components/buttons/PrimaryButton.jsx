@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Button = styled.span`
+export const Button = styled.div`
     padding: .5rem 1rem;
     min-width: 8rem;
     display: inline-flex;

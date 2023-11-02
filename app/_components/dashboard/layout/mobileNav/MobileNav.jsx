@@ -34,7 +34,7 @@ const MobileNav = ({ logged, setOpen }) => {
                             Ingresar
                         </NavLink> :
                         <>
-                            <NavLink href="/settings" >
+                            <NavLink href="/config" >
                                 <span><RiSettingsLine /></span>
                                 Configuración
                             </NavLink>
