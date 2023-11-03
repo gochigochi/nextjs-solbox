@@ -1,9 +1,9 @@
-import firebaseApp from "../_firebase/config"
-import { doc, getDoc, getFirestore } from "firebase/firestore"
+import { db } from "../_firebase/config"
+import { doc, getDoc } from "firebase/firestore"
 
 export const getSolarmanUserData = async (token, solarmanStationsData) => {
 
-    const db = getFirestore(firebaseApp)
+    // const db = getFirestore(firebaseApp)
     let docSnap = await getDoc(doc(db, "users", token.value))
     let userData = docSnap.data()
 

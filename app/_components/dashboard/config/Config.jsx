@@ -5,7 +5,8 @@ import Password from "./Password/Password"
 import { Container, Title } from "./Elements"
 
 const Config = () => {
-    return(
+
+    return (
         <Container>
             <Title>Configuracion de la cuenta</Title>
             <Password />
