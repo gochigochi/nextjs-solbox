@@ -1,30 +1,20 @@
 Proyect built with Next.js (App Router) as a fullstack framework.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Solbox App
 
-## Getting Started
+Solbox is a company based in Argentina that sells solar panels. As a business strategy they wanted to develop an application where user can consult the amount of energy produced by their personal panels. On the other hand they where willing to create a Solbox community and show in their app dashboard the total amount of energy produced by the community, its aproximate location in a map and graphs showing other various achievments. 
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The application brings this data from the Solarman API.
 
 ## Libraries
 
 Zod - client and server validations
+
 Styled Components
+
 Framer Motion
+
+Recharts
+
+Firebase Authentication
 
